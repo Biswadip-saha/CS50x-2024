@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Log In
+{% endblock %}
+
+{% block main %}
+
+<div class="section">
+
+    <h2>History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name of stock</th>
+                <th>Number of shares</th>
+                <th>Sold / Bought</th>
+                <th>Value of the transaction</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+            <tr>
+                <td>{{ stock["symbol"] }}</td>
+                <td>{{ stock["shares"] }}</td>
+                <td>{{ stock["method"] }}</td>
+                <td>{{ stock["value"] | usd }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}

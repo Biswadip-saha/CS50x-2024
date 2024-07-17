@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+            rel="stylesheet"
+        />
+        <link href="styles.css" rel="stylesheet" />
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice</h2>
+                <hr />
+                <!-- TODO: Add multiple choice question here -->
+                <h3>
+                    Question 1: Which year is considered as internet's birthday?
+                    <p id="incor">Incorrect!</p>
+                    <p id="cor">correct!</p>
+                </h3>
+                <div id="ans">
+                    <button type="button" id="button1">1. Year: 1980</button>
+                    <button type="button" id="button2">2. Year: 1983</button>
+                    <button type="button" id="button3">3. Year: 1986</button>
+                    <button type="button" id="button4">4. Year: 1989</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr />
+                <h3>
+                    Question 2: What is the name of the first internet? (In caps
+                    and in abbreviation form)
+                    <p id="incorfree">Incorrect!</p>
+                    <p id="corfree">correct!</p>
+                </h3>
+                <!-- TODO: Add free response question here -->
+                <input type="text" />
+                <button type="submit" id="check">Check Answer</button>
+            </div>
+        </div>
+
+        <script>
+            // TODO: Add code to check answers to questions
+            document
+                .querySelector('#button2')
+                .addEventListener('click', function () {
+                    let wrong = document.querySelector('#button2');
+                    let cor = document.querySelector('#cor');
+                    wrong.style.backgroundColor = 'green';
+                    cor.style.display = 'block';
+                    if (incor.style.display == 'block') {
+                        incor.style.display = 'none';
+                    }
+                });
+            document
+                .querySelector('#button1')
+                .addEventListener('click', function () {
+                    let wrong = document.querySelector('#button1');
+                    let incor = document.querySelector('#incor');
+                    wrong.style.backgroundColor = 'red';
+                    incor.style.display = 'block';
+                    if (cor.style.display == 'block') {
+                        cor.style.display = 'none';
+                    }
+                });
+            document
+                .querySelector('#button3')
+                .addEventListener('click', function () {
+                    let wrong = document.querySelector('#button3');
+                    let incor = document.querySelector('#incor');
+                    wrong.style.backgroundColor = 'red';
+                    incor.style.display = 'block';
+                    if (cor.style.display == 'block') {
+                        cor.style.display = 'none';
+                    }
+                });
+            document
+                .querySelector('#button4')
+                .addEventListener('click', function () {
+                    let wrong = document.querySelector('#button4');
+                    let incor = document.querySelector('#incor');
+                    wrong.style.backgroundColor = 'red';
+                    incor.style.display = 'block';
+                    if (cor.style.display == 'block') {
+                        cor.style.display = 'none';
+                    }
+                });
+            document
+                .querySelector('#check')
+                .addEventListener('click', function () {
+                    let input = document.querySelector('input');
+                    if (input.value === 'ARPANET') {
+                        input.style.backgroundColor = 'green';
+                        let corfree = document.querySelector('#corfree');
+                        corfree.style.display = 'block';
+                        if (incorfree.style.display == 'block') {
+                            incorfree.style.display = 'none';
+                        }
+                    } else {
+                        input.style.backgroundColor = 'red';
+                        let incorfree = document.querySelector('#incorfree');
+                        incorfree.style.display = 'block';
+                        if (corfree.style.display == 'block') {
+                            corfree.style.display = 'none';
+                        }
+                    }
+                });
+        </script>
+    </body>
+</html>
